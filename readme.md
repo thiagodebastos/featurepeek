@@ -1,6 +1,6 @@
-# featuretests
+# featurepeek
 
-A testbed for new features
+A testbed for new features, built with Roots
 
 ## Featured Features
 - Jeet
@@ -21,10 +21,3 @@ A testbed for new features
 - clone this repo down and `cd` into the folder
 - run `npm install`
 - run `roots watch`
-- ???
-- get money
-
-### Deploying
-
-- If you just want to compile the production build, run `roots compile -e production` and it will build to public.
-- To deploy your site with a single command, run `roots deploy -to XXX` with `XXX` being whichever [ship](https://github.com/carrot/ship#usage) deployer you want to use.
