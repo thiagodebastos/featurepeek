@@ -21,11 +21,10 @@ base()
 		list-style-type none
 		padding 1rem
 	header
-		center(1200px)
+		center(800px)
 		text-align center
 	section
-		center(1200px)
-		text-align center
+		center(800px)
 
 
 
@@ -179,15 +178,20 @@ base()
 			@media (min-width 800px)
 				span(1/3, uncycle: 2, cycle: 3)
 
+// 7 Jeet Shift
+.jeet-shift
+	edit(hotpink)
+	.container
+		center(800px)
 
+	aside
+		unshift()
+		@media(min-width 600px)
+			col(1/3)
+			shift(2/3)
 
-
-
-
-
-
-
-
-
-
-
+	article
+		unshift()
+		@media (min-width 600px)
+			col(2/3)
+			shift(-1/3)

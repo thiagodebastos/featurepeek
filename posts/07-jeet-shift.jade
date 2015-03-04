@@ -1,0 +1,48 @@
+---
+title: '07 Jeet Shift'
+author: 'Thiago de Bastos'
+_content: false
+category: 'jeet'
+---
+
+extends ../views/_single
+
+block content
+	.jeet-shift
+		.container
+			aside: h1 top or right
+			article: h1 bottom or left
+
+
+		:markdown
+			##shift
+			_(ratios = 0, col_or_span = column, gutter = jeet-gutter)_
+			
+			In this example we are using Jeet's `shift` mixin to control source ordering in order to produce a mobile-first layout. 
+
+			We use Jeet's `unshift()` mixin to unshift the elements we are about to apply when users are on mobile, and then specify columns as usual, shifting them around on non-mobile devices. This means that the layout will always begin 'unshifted'.
+
+			### index.jade
+			``` jade
+			.container
+				aside: h1 top or right
+				article: h1 bottom or left
+			```
+			
+			### master.styl
+			``` stylus
+			.container
+				center(800px)
+
+			aside
+				unshift()
+				@media(min-width 600px)
+					col(1/3)
+					shift(2/3)
+
+			article
+				unshift()
+				@media (min-width 600px)
+					col(2/3)
+					shift(-1/3)
+			```
