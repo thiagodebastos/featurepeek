@@ -1,0 +1,33 @@
+---
+title: 'Jeet Art Blog'
+author: 'Thiago de Bastos'
+_content: false
+category: 'jeet'
+---
+
+extends ../views/_single
+
+block content
+	.jeet-art-blog
+		.wrap
+			aside
+				a.logo(href="/")
+					img(src="http://2lcvgikr3ei5mzvzhonrz1cx.wpengine.netdna-cdn.com/wp-content/uploads/2009/01/pinguinshow-493x328.jpg", alt="logo")
+				nav
+					a(href="#") Home
+					a(href="#") Services
+					a(href="#") About
+					a(href="#") Contact
+
+			.posts
+				mixin post
+					.post
+						img(src="http://420placehold.it/art/400-300-pixelate", alt="sepia")
+						article
+							header
+								h2= post.title
+								p Ship of the imagination! Prime number billions upon billions? Encyclopaedia galactica, are creatures of the cosmos cosmic ocean rich in heavy atoms across the centuries? Citizens of distant epochs courage of our questions Orion's sword, something incredible is waiting to be known laws of physics Hypatia rich in heavy atoms.
+				+post
+				+post
+				+post
+				+post

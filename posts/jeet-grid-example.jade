@@ -1,0 +1,30 @@
+---
+title: 'Jeet grid example'
+author: 'Thiago de Bastos'
+_content: false
+category: 'jeet'
+---
+
+extends ../views/_single
+
+block content
+	.jeet-grid-example
+		section.nesting
+			h2 nesting
+			.half half
+			.half
+				.third third
+				.third third
+				.third
+					.fourth 4
+					.fourth 4
+					.fourth 4
+					.fourth 4
+
+		section.offsetting
+			h2 offsetting
+			.block block
+			.block.blue block
+			.block block
+
+

@@ -1,0 +1,193 @@
+@import 'jeet'
+@import '_settings'
+
+normalize-css()
+base()
+
+*
+	margin 0
+	padding 0
+
+
+// HOME PAGE
+.home
+	// edit()
+	a, a:visited
+		text-decoration none
+		color tomato
+	a:hover
+		color lighten(tomato, 40%)
+	li
+		list-style-type none
+		padding 1rem
+	header
+		center(1200px)
+		text-align center
+	section
+		center(1200px)
+		text-align center
+
+
+
+
+// JEET
+// 01 jeet-blog-listing
+.jeet-blog-listing
+	center(1000px,30px)
+	aside
+		// stack aside on top of .posts
+		stack()
+		// if > 700px, display as cols
+		@media (min-width 700px)
+			col(1/3)
+			a
+				display: block
+	.posts
+		stack()
+		@media (min-width 700px)
+			col(2/3)
+	.post
+		cf()
+		img
+			col(1/3 2/3)
+		article
+			col(2/3 2/3)
+
+// 02 jeet-grid-example
+.jeet-grid-example
+	center(1000px, 30px)
+
+	.nesting
+		.half
+			col(1/2)
+		.third
+			col(1/3 1/2)
+		.fourth
+			col(1/4 1/3 1/2)
+
+	.offsetting
+		.block
+			col(1/4)
+		.blue
+			// offset in negative direction to leave space on right side of itself
+			col(1/4, offset: -1/4)
+			background skyblue
+
+// 03 Responsive Layouts
+.jeet-responsive-layouts
+	cf()
+	img
+		// no margin on every 8th image
+		col(1/8, cycle: 8)
+		// at 1000px and below, remove previous cycle and apply new cycle
+		@media (max-width: 1000px)
+			col(1/4, cycle: 4, uncycle: 8)
+		@media (max-width: 600px)
+			col(1/3, cycle: 3, uncycle: 4)
+
+// 04 Jeet Gutters
+.jeet-gutters
+	cf()
+	section
+		overflow hidden
+		aside
+			col(1/4)
+		.gallery
+			col(3/4)
+		img
+			col(1/4, cycle: 4, gutter: 8)
+
+// 05 Jeet Art Blog
+.jeet-art-blog
+	margin 1rem
+	*
+		margin 0
+		padding 0
+		box-sizing border-box
+		font-family lucida-grande
+
+	.wrap
+		center(1200px)
+
+	aside
+		stack()
+		text-align center
+		// mobile first approach: only apply column layout after 600px
+		@media (min-width 600px)
+			col(1/3)
+		nav
+			margin-bottom 1rem
+			a
+				display block
+				background lighten(aqua, 10%)
+				color white
+				text-decoration none
+				padding 1em
+				border-bottom 1px solid darken(aqua, 10%)
+
+	.logo
+		margin-top 1rem
+		display block
+
+	.posts
+		@media (min-width 600px)
+			col(2/3)
+
+	img
+		max-width 100%
+
+	.post
+		cf()
+		border 1px solid lightgrey
+		padding 0.5em
+		margin-bottom 1rem
+		> img
+			stack()
+			margin-bottom 1em
+			@media (min-width 600px)
+				col(1/4)
+		> article
+			stack()
+			@media (min-width 600px)
+				col(3/4)
+
+// 6 Jeet Span
+.jeet-span
+	*
+		margin 0
+		padding 0
+		font-family helvetica-neue
+		box-sizing border-box
+
+	edit(hotpink)
+
+	.container
+		center(800px)
+
+		.logo
+			span(1/5)
+
+		nav
+			span(3/5, offset: 1/5)
+
+	.gallery
+		center(800px)
+		img
+			stack()
+			@media (min-width 500px)
+				span(1/2, cycle: 2)
+			@media (min-width 800px)
+				span(1/3, uncycle: 2, cycle: 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
