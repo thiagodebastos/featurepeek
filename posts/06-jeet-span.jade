@@ -1,0 +1,34 @@
+---
+title: '06 Jeet Span'
+author: 'Thiago de Bastos'
+_content: false
+category: 'jeet'
+---
+
+extends ../views/_single
+
+block content
+	.jeet-span
+		.container
+			img.logo(src="http://2lcvgikr3ei5mzvzhonrz1cx.wpengine.netdna-cdn.com/wp-content/uploads/2009/04/dizcow-493x328.jpg", alt="logo")
+			
+			nav
+				a(href="#") Link
+				a(href="#") Link
+				a(href="#") Link
+				a(href="#") Link
+
+		.gallery
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+			img(src="http://420placehold.it/art/400-300", alt="arttacular")
+
+		:markdown
+			### _`span (ratio = 1, offset = 0)`_
+
+			> Need a grid without the gutters? For instance, for a horizontal navigation 
+			where you want buttons touching. Do so like: span(1/5). No need to pass more 
+			than one ratio since we don't need to worry about the math involved with gutters and all that.
