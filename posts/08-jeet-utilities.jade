@@ -1,0 +1,45 @@
+---
+title: '08 Jeet Utilities'
+author: 'Thiago de Bastos'
+_content: false
+category: 'jeet'
+---
+
+extends ../views/_single
+
+block content
+	.jeet-utilities
+	.breakdown
+		:markdown
+			# Breakdown
+			## cf
+			`()`
+			
+			The clearfix mixin is used to group together `spans` and `columns`
+
+			## edit
+			`()`
+			
+			Gives every element on the page a transluscent background.
+
+			## stack
+			`(pad = 0, align = center)`
+			
+			Stacks elements on top of each other. Accepts padding on left and right and text align.
+
+			## center
+			`(max_width = 1410px, pad = 0)`
+			
+			Quickly center elements on the page. Accepts a `max-width` paramater and padding.
+
+			## uncenter
+			`()`
+
+			Undoes any centering applied by `center()` mixin
+
+			## align
+			`(direction = both)`
+
+			Accepts `horizontal` (`h`), or `vertical` (`v`)
+			
+			Element must be nested within a `position: relative` container as this mixin applies `position: absolute` to target element.
