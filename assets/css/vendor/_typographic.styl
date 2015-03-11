@@ -1,13 +1,23 @@
-// Jeet Settings
-jeet = {
-	gutter: 3,
-	parent-first: false,
-	layout-direction: LTR
-}
+// Ratios
 
-// Axis Settings (http://roots.cx/axis)
+minor-second   = 1.067
+major-second   = 1.125
+minor-third    = 1.2
+major-third    = 1.25
+perfect-fourth = 1.333
+aug-fourth     = 1.414
+perfect-fifth  = 1.5
+minor-sixth    = 1.6
+golden         = 1.61803399
+major-sixth    = 1.667
+minor-seventh  = 1.778
+major-seventh  = 1.875
+octave         = 2
+major-tenth    = 2.5
+major-eleventh = 2.667
+major-twelfth  = 3
+double-octave  = 4
 
-// font stack (add your own!)
 // Sans-serif
 calibri       = Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
 candara       = Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
@@ -21,8 +31,6 @@ optima        = Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif
 segoe         = Segoe, "Segoe UI", "Helvetica Neue", Arial, sans-serif
 tahoma        = Tahoma, Geneva, Verdana, sans-serif
 trebuchet     = "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif
-verdana       = Verdana, Geneva, sans-serif
-roboto        = Roboto, sans-serif
 lato          = Lato, sans-serif
 
 // Serif
@@ -31,7 +39,6 @@ baskerville   = Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "
 bodoni        = "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif
 cambria       = Cambria, Georgia, serif
 caslon        = "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif
-cardo         = Cardo, Garamond, Baskerville, serif
 constantia    = Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif
 didot         = Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif
 garamond      = Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif
@@ -61,45 +68,60 @@ font-face(goudy-mill, '/fonts', 'normal', 'normal')
 font-face(goudy-mill-italic, '/fonts', 'normal', 'normal')
 
 
-// default font stack
-font-stack                  = cardo
-font-size                   = 16
-font-color                  = #333
+// Mixins
+t-scale(numbawang = 1, rat = ratio)
+	return unit(numbawang * rat, rem)
 
-// colors (via http://clrs.cc - slightly modded)
-navy                        = #001F3F
-blue                        = #0074D9
-aqua                        = #7FDBFF
-teal                        = #39CCCC
-olive                       = #3D9970
-green                       = #2ECC40
-lime                        = #01FF70
-yellow                      = #FFDC00
-orange                      = #FF851B
-red                         = #D13F19
-maroon                      = #85144B
-fuchsia                     = #F012BE
-purple                      = #B10DC9
-white                       = #FFFFFF
-silver                      = #DDDDDD
-gray                        = #AAAAAA
-black                       = #222222
+t-headers(font-stack = helvetica)
+	h1, h2, h3, h4, h5, h6
+		font-family: font-stack
 
-// default color
-default-color               = blue
+// Presets
+t-presets(ratio = golden)
 
-// text highlight color
-highlight-color             = blue
+	// Headers
+	h1, h2, h3, h4, h5, h6
+		margin-top:    0
+		margin-bottom: t-scale(.5, ratio)
+	h1
+		font-size:     t-scale(2, ratio)
+		line-height:   t-scale(2, ratio)
+	h2
+		font-size:     t-scale(1.75, ratio)
+		line-height:   t-scale(1.75, ratio)
+	h3
+		font-size:     t-scale(1.5, ratio)
+		line-height:   t-scale(1.5, ratio)
+	h4
+		font-size:     t-scale(1.25, ratio)
+		line-height:   t-scale(1.25, ratio)
+	h5
+		font-size:     t-scale(1, ratio)
+		line-height:   t-scale(1, ratio)
+	h6
+		font-size:     t-scale(.75, ratio)
+		line-height:   t-scale(.75, ratio)
 
-// ligatures
-ligatures                   = true
+	// Base
+	p, ul, ol, label, input, textarea, fieldset, dl, blockquote
+		font-size:     t-scale(1, ratio)
+		line-height:   t-scale(2, ratio)
+		margin-top:    0
+		margin-bottom: t-scale(1, ratio)
+	label
+		margin-bottom: 0
+	ul
+		padding-left: t-scale(1.2, ratio)
+	ol
+		padding-left: t-scale(1.3, ratio)
+	li, dd
+		margin-bottom: t-scale(.25, ratio)
+	dt
+		font-weight: bold
+	dd
+		margin-left: 0
+	blockquote
+		margin-left: 0
+		cite
+			display: block
 
-// custom image base path for roots mixins
-img-path                    = ''
-
-// support for old IE
-support-for-ie              = false
-
-// progressive IE (http://css3pie.com/)
-pie-enabled                 = false
-pie-path                    = '/pie.htc'

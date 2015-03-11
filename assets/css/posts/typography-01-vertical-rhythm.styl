@@ -1,0 +1,53 @@
+@import 'jeet'
+@import './../_settings'
+@import './../_functions'
+
+normalize-css()
+base()
+edit()
+
+@import 'typographic'
+
+t-presets(golden)
+t-headers(goudy-mill-italic)
+
+.typography-vertical-rhythm
+html
+	font-family cardo
+	font-size 12px
+	text-rendering optimizeLegibility
+	color #333
+	center(94%)
+
+
+	body
+		background-color whitesmoke
+	article
+		center()
+		max-width 54em
+
+	// Base
+	p, ul, ol, label, input, textarea, fieldset, dl, blockquote
+		letter-spacing 0.01em
+		word-spacing 0.01em
+		em
+			font-style normal
+			font-family cardo-italic
+
+	blockquote > p
+		max-width 24em
+		font-family goudy-mill-italic
+		color grey
+		border-left t-scale(0.2, golden) solid grey
+		padding-left t-scale(1, golden)
+		margin-left t-scale(1, golden)
+
+	// Hyphenate text on mobile devices
+	@media (max-width: 320px)
+		hyphens auto
+
+	// make base font larger on high DPI screens
+	@media (min-width: 1400px)
+		font-size: 18px
+	@media (min-width: 1800px)
+		font-size: 21px

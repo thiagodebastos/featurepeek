@@ -1,16 +1,14 @@
 @import 'jeet'
 @import '_settings'
+@import '_functions'
 
 normalize-css()
-base()
-
-*
-	margin 0
-	padding 0
+// base()
+@import '_base'
 
 // Breakdown and code
 .breakdown
-	center(800px)
+	// center(800px)
 	code
 		color: tomato
 
@@ -210,3 +208,56 @@ base()
 	edit()
 	center(800px)
 
+// Code 03 ems and rems
+px = ( 1 / 16 ) rem
+
+.code-rems-and-ems
+	edit()
+	.breakdown
+		clear()
+		padding 1rem 0 2rem 0
+		display flex
+		flex-flow row wrap
+		justify-content space-around
+		color white
+
+		.square
+			&--px
+				width 160 * px
+				height 160 * px
+				background-color black
+			&--rem
+				width 10rem
+				height 10rem
+				background-color forestgreen
+			&--em
+				width 10em
+				height 10em
+				background-color tomato
+
+// Typography Vertical Rhythm
+.typography-vertical-rhythm
+	// edit()
+	@import 'vendor/_typographic'
+
+
+
+	t-presets(golden)
+	t-headers(mill)
+
+	.breakdown
+		width 37em
+		font-family cardo
+		font-size 16px
+		line-height 26px
+
+		@media (min-width: 600px)
+			font-size: 15px
+		@media (min-width: 800px)
+			font-size: 17px
+		@media (min-width: 1000px)
+			font-size: 20px
+		@media (min-width: 1400px)
+			font-size: 23px
+		@media (min-width: 1800px)
+			font-size: 26px
